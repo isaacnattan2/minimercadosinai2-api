@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "minimercadosinai2"
+name = "minimercadosinai2-api"
 version = "0.1.0"
 description = "Integration with iDAccess iDFlex Pro for user access registration"
 authors = ["Isaac Nattan"]

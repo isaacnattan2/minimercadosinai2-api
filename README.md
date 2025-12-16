@@ -19,8 +19,8 @@ API para integrar com dispositivos de controle de acesso iDAccess iDFlex Pro da 
 
 1. Clone o repositorio:
 ```bash
-git clone https://github.com/isaacnattan2/minimercadosinai2.git
-cd minimercadosinai2
+git clone https://github.com/isaacnattan2/minimercadosinai2-api.git
+cd minimercadosinai2-api
 ```
 
 2. Instale as dependencias:
