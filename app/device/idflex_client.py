@@ -12,8 +12,17 @@ class IDFlexClient:
         self.login = login or settings.device_login
         self.password = password or settings.device_password
         self.session: Optional[str] = None
-        self.base_url = f"http://{self.ip}"
+        # Use the normalized base URL which handles both IP addresses and full URLs (including ngrok)
+        self.base_url = settings.get_device_base_url() if ip is None else self._normalize_url(ip)
         self._client = httpx.AsyncClient(timeout=30.0)
+
+    @staticmethod
+    def _normalize_url(value: str) -> str:
+        """Normalize a device address to a full URL."""
+        value = value.strip().rstrip("/")
+        if value.startswith("http://") or value.startswith("https://"):
+            return value
+        return f"http://{value}"
 
     async def close(self):
         """Close the HTTP client."""
